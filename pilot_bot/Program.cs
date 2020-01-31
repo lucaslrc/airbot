@@ -68,10 +68,8 @@ namespace airbot
                 {
                     await botClient.SendTextMessageAsync(
                         chatId: e.Message.Chat,
-                        text: $"{e.Message.Text.Substring(6, 5)}"
+                        text: $"{awc.getMetar(e.Message.Text.Substring(6, 5).Replace(" ", "").ToUpper())}"
                     );
-
-                    Console.WriteLine(awc.getMetar(e.Message.Text.Substring(6, 5).Replace(" ", "").ToUpper()));
                 }
             }
             else
